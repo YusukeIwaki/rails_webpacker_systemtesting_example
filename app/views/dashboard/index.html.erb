@@ -1,0 +1,10 @@
+<% content_for(:extra_assets) do %>
+<%= javascript_pack_tag 'dashboard', 'data-turbolinks-track': 'reload' %>
+<% end %>
+
+<h1>DASHBOARD</h1>
+<% if current_user %>
+<h2>こんにちは<%= current_user.name %>さん</h2>
+<% end %>
+
+<div id="announcements-container"></div>
