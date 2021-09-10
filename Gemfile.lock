@@ -116,6 +116,8 @@ GEM
       rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
+    rack-test_server (0.1.0)
+      rack
     rails (6.1.4.1)
       actioncable (= 6.1.4.1)
       actionmailbox (= 6.1.4.1)
@@ -218,6 +220,7 @@ DEPENDENCIES
   pry-rails
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
+  rack-test_server
   rails (~> 6.1.4, >= 6.1.4.1)
   rspec-rails
   sass-rails (>= 6)

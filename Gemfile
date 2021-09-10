@@ -48,6 +48,7 @@ end
 group :test do
   gem 'faker'
   gem 'factory_bot_rails'
+  gem 'rack-test_server'
   gem 'rspec-rails'
 end
 
