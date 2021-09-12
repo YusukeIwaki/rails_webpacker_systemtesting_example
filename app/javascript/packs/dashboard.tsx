@@ -8,9 +8,9 @@ interface AnnouncementProps {
 
 const AnnouncementRow = (props: AnnouncementProps) => {
     if (props.description) {
-        return (<li>{props.title} - {props.description}</li>)
+        return (<li className="border-t-2 border-gray hover:bg-gray-100 p-1">{props.title}<div className="text-xs text-gray-600">{props.description}</div></li>)
     } else {
-        return (<li>{props.title}</li>)
+        return (<li className="border-t-2 border-gray hover:bg-gray-100 p-1">{props.title}</li>)
     }
 }
 
@@ -26,9 +26,14 @@ const AnnouncementList = (props: AnnouncementListProps) => {
                 key={announcement.id}
                 title={announcement.title}
                 description={announcement.description} />))
-        return (<><div>お知らせが{props.count}件あります</div><ul>{rows}</ul></>)
+        return (
+            <>
+                <div className="font-semibold text-sm">お知らせが{props.count}件あります</div>
+                <ul>{rows}</ul>
+            </>
+        )
     } else {
-        return (<div>お知らせはありません</div>)
+        return (<div className="font-semibold text-sm">お知らせはありません</div>)
     }
 }
 
@@ -73,21 +78,28 @@ const App = () => {
     }
 
     if (announcementList.loading) {
-        return (<div>loading...</div>)
+        return (<div className="flex justify-center items-center"><span>loading...</span></div>)
     } else if (!announcementList.result) {
-        return (<div>ERROR <a href="#" onClick={onReloadClicked}>更新</a></div>)
+        return (
+            <div className="flex flex-col justify-center items-center">
+                <div className="text-xl text-bold text-gray-600 mb-2">ERROR</div>
+                <a href="#" className="text-blue-500 underline" onClick={onReloadClicked}>更新</a>
+            </div>
+        )
     } else {
         return (
-            <>
+            <div className="bg-white shadow-md rounded px-4 py-3 m-2">
                 <AnnouncementList
                     count={announcementList.result.count}
                     announcements={announcementList.result.announcements} />
-                <a href="#" onClick={onReloadClicked}>更新</a>
-            </>
+                <a href="#" className="text-blue-500 underline" onClick={onReloadClicked}>更新</a>
+            </div>
         )
     }
 }
 
 document.addEventListener('DOMContentLoaded', (e) => {
-    ReactDom.render(<App />, document.getElementById('announcements-container'))
+    const container = document.getElementById('announcements-container')
+    container.setAttribute('class', 'w-full max-w-sm')
+    ReactDom.render(<App />, container)
 }, false)

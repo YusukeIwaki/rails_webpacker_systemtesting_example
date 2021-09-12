@@ -1,0 +1,14 @@
+<% content_for(:extra_assets) do %>
+<%= javascript_pack_tag 'login', 'data-turbolinks-track': 'reload' %>
+<% end %>
+
+<h1 class="font-bold text-4xl mb-2 border-b-2 border-black text-center">LOGIN</h1>
+
+<%=
+    content_tag(:div, '',
+        id: 'login-form',
+        data: {
+            post_url: login_path,
+            authenticity_token: form_authenticity_token,
+        })
+%>
