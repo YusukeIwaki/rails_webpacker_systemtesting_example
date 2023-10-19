@@ -37,3 +37,6 @@ yarn-debug.log*
 
 
 /mysqldata
+/test-results/
+/playwright-report/
+/playwright/.cache/
