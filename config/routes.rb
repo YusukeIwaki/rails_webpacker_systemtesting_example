@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resources :announcements, only: [:index]
   end
+
+  root to: 'dashboard#index'
 end

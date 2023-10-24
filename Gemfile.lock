@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/YusukeIwaki/e2e_testing_on_rails.git
+  revision: e5a3417114b8a51f9a8be1b7508d2366c34e2c90
+  specs:
+    e2e_testing_on_rails (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -191,6 +197,7 @@ GEM
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
     semantic_range (3.0.0)
+    simple_stub (0.1.0)
     spring (3.0.0)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
@@ -230,6 +237,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   capybara
+  e2e_testing_on_rails!
   factory_bot_rails
   faker
   jbuilder (~> 2.7)
@@ -242,6 +250,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (>= 6)
   selenium-webdriver
+  simple_stub
   spring
   turbolinks (~> 5)
   tzinfo-data

@@ -52,6 +52,8 @@ group :test do
 
   gem 'capybara'
   gem 'selenium-webdriver'
+  gem 'e2e_testing_on_rails', github: 'YusukeIwaki/e2e_testing_on_rails'
+  gem 'simple_stub'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
